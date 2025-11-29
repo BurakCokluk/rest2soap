@@ -11,6 +11,8 @@ spec:
     path: infrastructure/kubernetes
     directory:
       recurse: true
+      # kind ve argocd kurulum dosyalarını dışla
+      exclude: "{kind/**,argocd/install.yaml}"
   destination:
     server: https://kubernetes.default.svc
     namespace: infra
