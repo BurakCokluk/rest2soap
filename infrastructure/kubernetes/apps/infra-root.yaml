@@ -1,16 +1,17 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: strimzi-kafka-operator
+  name: infra-root
   namespace: argocd
-  annotations:
-    argocd.argoproj.io/sync-wave: "0"
 spec:
   project: default
   source:
-    repoURL: https://github.com/strimzi/strimzi-kafka-operator.git
-    targetRevision: release-0.39.x
-    path: install/cluster-operator
+    repoURL: https://github.com/BurakCokluk/rest2soap
+    targetRevision: main
+    path: infrastructure/kubernetes
+    directory:
+      recurse: true
+      exclude: "{apps/**}"
   destination:
     server: https://kubernetes.default.svc
     namespace: infra

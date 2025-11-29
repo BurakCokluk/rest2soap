@@ -1,18 +1,14 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: infra-root
+  name: postgres
   namespace: argocd
 spec:
   project: default
   source:
     repoURL: https://github.com/BurakCokluk/rest2soap
     targetRevision: main
-    path: infrastructure/kubernetes
-    directory:
-      recurse: true
-      # kind ve argocd kurulum dosyalarını dışla
-      exclude: "{kind/**,argocd/install.yaml}"
+    path: infrastructure/kubernetes/postgres
   destination:
     server: https://kubernetes.default.svc
     namespace: infra
