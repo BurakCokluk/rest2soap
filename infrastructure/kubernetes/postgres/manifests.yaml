@@ -1,0 +1,5 @@
+# Placeholder Postgres manifest
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: postgres

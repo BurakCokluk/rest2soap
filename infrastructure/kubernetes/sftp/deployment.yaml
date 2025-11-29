@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sftp
+  namespace: infra
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: sftp
+  template:
+    metadata:
+      labels:
+        app: sftp
+    spec:
+      containers:
+        - name: sftp
+          image: atmoz/sftp:alpine
+          args: ["user:password:::upload,processed,response"]
+          ports:
+            - containerPort: 22
+          volumeMounts:
+            - name: sftp-data
+              mountPath: /home/user
+      volumes:
+        - name: sftp-data
+          emptyDir: {}

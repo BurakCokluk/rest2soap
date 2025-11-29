@@ -1,0 +1,7 @@
+# Placeholder ingress manifest
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: rest2soap-ingress
+spec:
+  rules: []

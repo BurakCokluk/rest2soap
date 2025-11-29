@@ -1,0 +1,5 @@
+# Placeholder Kafka manifest
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: kafka
