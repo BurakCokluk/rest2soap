@@ -11,7 +11,7 @@ spec:
     path: infrastructure/kubernetes
     directory:
       recurse: true
-      exclude: "{apps/**}"
+      exclude: "{apps/**,**/kustomization.yaml}"
   destination:
     server: https://kubernetes.default.svc
     namespace: infra
