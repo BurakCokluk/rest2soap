@@ -3,6 +3,8 @@ kind: Kafka
 metadata:
   name: kafka-cluster
   namespace: infra
+  annotations:
+    argocd.argoproj.io/sync-wave: "1" 
 spec:
   kafka:
     version: 3.6.0
